@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAA;EACA,gBAAgB,EAAE,KAAK;CAiC1B;;AAlCD,AAQgB,IARZ,CAKA,OAAO,CACH,UAAU,CACN,IAAI,CACA,UAAU,CAAA;EACN,gBAAgB,EAAG,OAAiB;CAqBvC;;AA9BjB,AAUoB,IAVhB,CAKA,OAAO,CACH,UAAU,CACN,IAAI,CACA,UAAU,CAEN,KAAK,CAAA;EACD,MAAM,EAAE,IAAI;CAkBf",
+    "sources": [
+        "take.scss"
+    ],
+    "names": [],
+    "file": "take.css"
+}

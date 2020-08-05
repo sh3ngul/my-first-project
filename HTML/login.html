@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-4">
+                <form action="">
+                    <div class="form-group">
+                        <label for="surname">Surname</label>
+                        <input type="text" id="surname" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+
+                    <input type="submit" value="Login" id="login" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function Person(surname, email) {
+            this.surname = surname;
+            this.email = email;
+        }
+
+        function getInputValue(identifikator) {
+            return document.getElementById(identifikator).value;
+        }
+
+        function findUser(inArray, checkedUser) {
+            let found = false;
+
+            for (let user of inArray) {
+                if (user.surname == checkedUser.surname && user.email == checkedUser.email) {
+                    found = true;
+                    break;
+                }
+            }
+
+            return found;
+        }
+        
+        document.addEventListener("DOMContentLoaded", function () {
+
+            document.getElementById("login").addEventListener("click", function (e) {
+                e.preventDefault();
+
+                let surname = getInputValue("surname");
+                let email = getInputValue("email");
+
+                let person = new Person(surname, email);
+
+                if ("people" in localStorage) {
+                    let allPeople = JSON.parse(localStorage.people);
+
+                    if ("length" in allPeople) {
+
+                        let found = findUser(allPeople,person);
+ 
+                        if (found) {
+                            href="hisse3.html"
+                        }
+                        else {
+                            alert("Bele bir istifadechi tapilmadi!!!");
+                        }
+                    }
+                    else {
+                        let oneUserInLocalStorage = JSON.parse(localStorage.people);
+
+                        if (oneUserInLocalStorage.surname == surname && oneUserInLocalStorage.email == email) {
+               alert("Siz ugurla daxil oldunuz");
+                        }
+         else {
+                            alert("Bele bir istifadechi tapilmadi!");
+                        }
+                    }
+                }
+                else {
+                    alert("ERROR, Zehmet olmasa qeydiyyatdan kecin");
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+body {
+  background-color: black;
+}
+
+body section .container .row .col-sm-12 {
+  background-color: #d8e619;
+}
+
+body section .container .row .col-sm-12 .card {
+  border: none;
+}
+/*# sourceMappingURL=take.css.map */
